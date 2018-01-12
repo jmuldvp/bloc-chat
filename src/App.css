@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -20,6 +20,59 @@
 
 .App-intro {
   font-size: large;
+}
+
+ul {
+  /* list-style: none; */
+  color: #989898;
+}
+
+html,
+body {
+  height: 100%;
+  /* padding: 0;
+  margin: 0; */
+}
+
+.app_title {
+  color: #848c9d;
+  font-weight: bold;
+  margin: 50px 50px 50px 50px !important;
+  border: 50px 50px 50px 50px !important;
+}
+
+.container {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+}
+
+.nav {
+  background: #dedede;
+  width: 200px;
+  -ms-flex: 0 100px;
+  -webkit-box-flex:  0;
+  -moz-box-flex:  0;
+  -ms-box-flex:  0;
+  box-flex:  0;
+}
+
+.main {
+  background: aliceblue;
+ -ms-flex: 1;
+ -webkit-box-flex: 1;
+ -moz-box-flex: 1;
+ -ms-box-flex: 1;
+ box-flex: 1;
 }
 
 @keyframes App-logo-spin {
