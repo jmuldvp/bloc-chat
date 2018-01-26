@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import NewRoom from './NewRoom';
 
 class RoomList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       rooms: [],
-      newRoomName: ""
+      modalOpen: false
     };
-    this.createRoom = this.createRoom.bind(this);
-    this.updateRoomNameValue = this.updateRoomNameValue.bind(this);
+
+
   }
 
   componentDidMount() {
@@ -22,18 +23,14 @@ class RoomList extends Component {
     });
   }
 
-  createRoom() {
-    this.roomsRef.push({name: this.state.newRoomName});
-    this.setState({
-      newRoomName: ''
-    });
-  }
+  toggleModal = () => {
+     this.setState({
+       modalOpen: !this.state.modalOpen
+     });
+   }
 
-  updateRoomNameValue(evt) {
-    this.setState({
-      newRoomName: evt.target.value
-    });
-  }
+
+
 
   render() {
     return (
@@ -44,9 +41,14 @@ class RoomList extends Component {
           )}
         </ul>
         <div>
-          Add room name:
-          <input value={this.state.newRoomName} onChange={this.updateRoomNameValue}/>
-          <button type="button" onClick={this.createRoom}>Create</button>
+
+          <button onClick={this.toggleModal}>
+             Add New Room
+           </button>
+
+           <NewRoom show={this.state.modalOpen}
+              roomsRef={this.roomsRef}
+             onClose={this.toggleModal} />
         </div>
       </div>
     );
