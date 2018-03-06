@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 class Modal extends React.Component {
   constructor(props){
     super(props);
-
     this.state = {
       newRoomName: "",
     };
-
     this.createRoom = this.createRoom.bind(this);
     this.updateRoomNameValue = this.updateRoomNameValue.bind(this);
   }
@@ -39,7 +37,7 @@ class Modal extends React.Component {
       bottom: 0,
       left: 0,
       right: 0,
-      backgroundColor: 'rgb(0,0,0)',
+      // backgroundColor: 'rgb(0,0,0)',
       backgroundColor: 'rgba(0,0,0,0.3)',
       padding: 50
     };

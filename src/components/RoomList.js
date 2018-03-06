@@ -8,14 +8,11 @@ class RoomList extends Component {
       rooms: [],
       modalOpen: false
     };
-
-
   }
 
   componentDidMount() {
     this.roomsRef = this.props.firebase.database().ref('rooms');
     this.roomsRef.on('child_added', snapshot => {
-      // console.log(snapshot)
       const room = snapshot.val();
       room.key = snapshot.key;
       // console.log(room)
@@ -29,27 +26,26 @@ class RoomList extends Component {
      });
    }
 
-
-
-
   render() {
     return (
-      <div>
-        <ul>
-          { this.state.rooms.map( (room, index) =>
-            <li key={index}>{ room.name }</li>
-          )}
-        </ul>
+      <div className='room-list'>
+        {/* { this.props.activeRoom ? this.props.activeRoom.name : '' } */}
+        <h1>Bloc Chat</h1>
         <div>
 
-          <button onClick={this.toggleModal}>
+          <button onClick={ this.toggleModal }>
              Add New Room
            </button>
 
-           <NewRoom show={this.state.modalOpen}
-              roomsRef={this.roomsRef}
-             onClose={this.toggleModal} />
+           <NewRoom show={ this.state.modalOpen }
+              roomsRef={ this.roomsRef }
+             onClose={ this.toggleModal } />
         </div>
+        <ul>
+          { this.state.rooms.map( (room, index) =>
+            <li onClick={() => this.props.setRoom(room)} key={index}>{ room.name }</li>
+          )}
+        </ul>
       </div>
     );
   }
