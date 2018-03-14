@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewRoom from './NewRoom';
+import User from './User';
 
 class RoomList extends Component {
   constructor(props) {
@@ -30,12 +31,12 @@ class RoomList extends Component {
     return (
       <div className='room-list'>
         {/* { this.props.activeRoom ? this.props.activeRoom.name : '' } */}
-        <h1>Bloc Chat</h1>
+        
         <div>
 
           <button onClick={ this.toggleModal }>
              Add New Room
-           </button>
+          </button>
 
            <NewRoom show={ this.state.modalOpen }
               roomsRef={ this.roomsRef }

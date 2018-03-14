@@ -51,6 +51,26 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
+  margin-top: 80px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: black;
+  padding: .5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+nav button {
+  padding: .5rem 1rem;
+  border-radius: 2px;
+  text-transform: uppercase;
 }
 
 .room-list {

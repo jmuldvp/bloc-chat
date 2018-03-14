@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+// import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 
 class MessageList extends React.Component {
   constructor(props) {
@@ -24,11 +25,13 @@ class MessageList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const messagesToUpdate = this.state.allMessages.filter(message => message.roomId.toString() === nextProps.activeRoom.key);
-    this.setState({
-      messages: messagesToUpdate,
-      activeRoom: nextProps.activeRoom
-    });
+    if(nextProps.activeRoom) {
+      const messagesToUpdate = this.state.allMessages.filter(message => message.roomId.toString() === nextProps.activeRoom.key);
+      this.setState({
+        messages: messagesToUpdate,
+        activeRoom: nextProps.activeRoom
+      });
+    }
     // console.log(this.state.messages)
   }
 

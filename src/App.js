@@ -4,6 +4,7 @@ import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import MessageList from './components/MessageList';
+import User from './components/User';
 
 
 // Initialize Firebase
@@ -22,25 +23,38 @@ sessionsRef.push({
   sentAt: firebase.database.ServerValue.TIMESTAMP
 });
 
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeRoom: null
+      activeRoom: null,
+      activeUser: null
     };
 
     this.setRoom = this.setRoom.bind(this);
+    this.setUser = this.setUser.bind(this);
   };
 
   setRoom(room) {
     this.setState({ activeRoom: room })
   }
 
+  setUser(user) {
+    this.setState({ activeUser: user })
+  }
+
   render() {
     return (
-      <div className="container">
-        <RoomList firebase={ firebase } activeRoom={ this.state.activeRoom } setRoom={this.setRoom} />
-        <MessageList firebase={ firebase } activeRoom={ this.state.activeRoom } />
+      <div>
+        <nav>
+          <h2>Bloc Chat</h2>
+          <User firebase={ firebase } setUser={ this.setUser } />
+        </nav>
+        <div className="container">
+          <RoomList firebase={ firebase } activeRoom={ this.state.activeRoom } setRoom={this.setRoom} />
+          <MessageList firebase={ firebase } activeRoom={ this.state.activeRoom } />
+        </div>
       </div>
     );
   }

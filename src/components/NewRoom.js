@@ -5,7 +5,7 @@ class Modal extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      newRoomName: "",
+      newRoomName: ""
     };
     this.createRoom = this.createRoom.bind(this);
     this.updateRoomNameValue = this.updateRoomNameValue.bind(this);
@@ -46,8 +46,8 @@ class Modal extends React.Component {
     const modalStyle = {
       backgroundColor: '#fff',
       borderRadius: 5,
-      maxWidth: 500,
-      minHeight: 300,
+      maxWidth: 350,
+      minHeight: 125,
       margin: '0 auto',
       padding: 30
     };
