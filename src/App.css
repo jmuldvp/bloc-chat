@@ -1,7 +1,3 @@
-/* .App {
-  text-align: center;
-} */
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -27,20 +23,22 @@ ul {
   color: #989898;
 }
 
-li {
+.room-list ul li {
   padding: 4px;
+}
+
+.message-list ul li {
+  padding: 15px;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
-  /* padding: 0;
-  margin: 0; */
 }
 
 #root {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
@@ -74,18 +72,54 @@ nav button {
 }
 
 .room-list {
+  height: 100vh;
   background: #dedede;
   padding: 10px 40px;
 }
 
 .message-list {
+  height: 100vh;
   flex: 1;
   background: aliceblue;
-  padding: 10px 40px;
+  padding: 10px 0 0 40px;
+  margin-bottom: 0 auto -50px;
 }
 
-.room-name {
+.message-list ul {
+  padding: 0 0 0 0;
+}
 
+.message-list ul li:nth-child(odd) {
+  background: #dedede;
+}
+
+.message-list ul li b{
+  color: black;
+}
+
+.message-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: black;
+  padding: .25rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.message-footer button {
+  padding: .5rem 1rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.message-footer input {
+  width: 30vw;
+  padding: .5rem 1rem;
+  border-radius: 2px;
 }
 
 @keyframes App-logo-spin {
