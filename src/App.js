@@ -51,10 +51,12 @@ class App extends Component {
           <h2>Bloc Chat</h2>
           <User firebase={ firebase } setUser={ this.setUser } />
         </nav>
-        <div className="container">
-          <RoomList firebase={ firebase } activeRoom={ this.state.activeRoom } setRoom={this.setRoom} />
-          <MessageList firebase={ firebase } activeRoom={ this.state.activeRoom } user={this.state.activeUser}/>
-        </div>
+        { this.state.activeUser ?
+          <div className="container">
+            <RoomList firebase={ firebase } activeRoom={ this.state.activeRoom } setRoom={this.setRoom} />
+            <MessageList firebase={ firebase } activeRoom={ this.state.activeRoom } user={this.state.activeUser}/>
+          </div>
+        : null }
       </div>
     );
   }

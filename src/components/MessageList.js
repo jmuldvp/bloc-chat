@@ -69,10 +69,16 @@ class MessageList extends React.Component {
           )}
         </ul>
         <span className='message-footer'>
-          <input value={this.state.newMessage} onChange={this.updateNewMessageValue} />
-          <button onClick={this.createMessage}>
-            Send
-          </button>
+
+          { this.props.activeRoom ?
+          <div>
+            <input value={this.state.newMessage} onChange={this.updateNewMessageValue} />
+            <button onClick={this.createMessage}>
+              Send
+            </button>
+          </div>
+           : null }
+
         </span>
       </div>
     );

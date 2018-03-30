@@ -32,7 +32,7 @@ class User extends Component {
 
     return(
       <div>
-        <span>Loggged in as: {currentUser} </span>
+        <span>Logged in as: {currentUser} </span>
         <button onClick={ this.signIn.bind(this) }>
            Sign-in
         </button>
